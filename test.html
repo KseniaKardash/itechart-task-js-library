@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Library</title>
+  <script src="lib.js"></script>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    let numbers = [1, 2, 3, 4];
+    let array = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    let booleanValue = true;
+    let numberValue = 1;
+    let und;
+    let stringValue = "string";
+    let func = function() {};
+    let nullValue = null;
+    let dateValue = new Date();
+    let firstValue = first(numbers);
+    let lastValue = last(numbers);
+    let chainArr = chain(array).take(3).last().value;
+
+    console.log(firstValue);
+    console.log(lastValue);
+    console.log(chainArr);
+    console.log(isBoolean(booleanValue));
+    console.log(isNumber(numberValue));
+    console.log(isString(stringValue));
+    console.log(isUndefined(und));
+    console.log(isFunction(func));
+    console.log(isNull(nullValue));
+    console.log(isDate(dateValue));
+    console.log(isArray(numbers));
+  </script>
+</body>
+
+</html>
