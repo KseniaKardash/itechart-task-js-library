@@ -1,3 +1,5 @@
+// array methods: first, last, take, skip and chain
+
 let first = function(originalArray) {
   if (arguments.length != 1) {
     throw 'This function expects one parameter(original array).';
@@ -41,6 +43,7 @@ let skip = function(originalArray, number) {
 }
 
 let chain = function(array) {
+
   this.value = array;
 
   this.skip = function(n) {
@@ -61,6 +64,8 @@ let chain = function(array) {
 
   return this;
 }
+
+// obj methods
 
 let isBoolean = function(obj) {
   if (typeof obj === 'boolean') {
