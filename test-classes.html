@@ -10,14 +10,17 @@
 <body>
 
   <script type="text/javascript">
-    let arr = new Library([1, 2, 3, 4]);
-    console.log(arr.take(3).first());
-
-    let array = new Library([1, 2, 3, 4, 5, 6, 7, 8]);
-    console.log(array.skip(3).ejectArray());
-
-    let o = new Obj(23);
-    console.log(o.isString());
+    // let arr = new Library([1, 2, 3, 4]);
+    // console.log(arr.take(3).first());
+let a = new Library([1, 2]);
+let b = new Library([3, 4]);
+    // let arr = new Library([1, "DV", 3, 4, 5, 6, 7]);
+    let ab = new Library([a, b]);
+        console.log(ab);
+        console.log(ab.isArrayOf(Library));
+    //
+    // let o = new Obj(23);
+    // console.log(o.isString());
   </script>
 </body>
 

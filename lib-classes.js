@@ -1,53 +1,58 @@
 
 // Library Class
 
-class Library {
+ class Library {
 
   constructor(array) {
-    this.array = array;
+    this.array = array.filter(function(number) {
+      return typeof number === typeof array[0] ;
+    });
   }
 
-  take(number) {
-    if (arguments.length != 1) {
-      throw 'This function expects only one parameter(number).';
-    } else {
-      this.array.splice(number, this.array.length);
-      return this;
-    }
-  }
+isArrayOf(type){
+  return [ typeof this.array[0], this.array[0] instanceof type]
+}
 
-  skip(number) {
-    if (arguments.length != 1) {
-      throw 'This function expects only one parameter(number).';
-    } else {
-      this.array.splice(0, number);
-      return this;
-    }
-  }
+   take(number) {
+     if (arguments.length != 1) {
+       throw 'This function expects only one parameter(number).';
+     } else {
+       this.array.splice(number, this.array.length);
+       return this;
+     }
+   }
 
-  ejectArray() {
-    if (arguments.length != 0) {
-      throw 'This function does not expect any parameter.';
-    } else {
-      return this.array;
-    }
-  }
+   skip(number) {
+     if (arguments.length != 1) {
+       throw 'This function expects only one parameter(number).';
+     } else {
+       this.array.splice(0, number);
+       return this;
+     }
+   }
+   ejectArray() {
+     if (arguments.length != 0) {
+       throw 'This function does not expect any parameter.';
+     } else {
+       return this.array;
+     }
+   }
 
-  first() {
-    if (arguments.length != 0) {
-      throw 'This function does not expect any parameter.';
-    } else {
-      return this.array[0];
-    }
-  }
+   first() {
+     if (arguments.length != 0) {
+       throw 'This function does not expect any parameter.';
+     } else {
+       return this.array[0];
+     }
+   }
 
-  last() {
-    if (arguments.length != 0) {
-      throw 'This function does not expect any parameter.';
-    } else {
-      return this.array[this.array.length - 1];
-    }
-  }
+   last() {
+     if (arguments.length != 0) {
+       throw 'This function does not expect any parameter.';
+     } else {
+       return this.array[this.array.length - 1];
+     }
+   }
 }
 
 // Obj Class
