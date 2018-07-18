@@ -1,58 +1,59 @@
 
 // Library Class
 
- class Library {
+class Library {
 
   constructor(array) {
-    this.array = array.filter(function(number) {
-      return typeof number === typeof array[0] ;
+    this.array = array.filter(function(item){
+      return typeof item === typeof array[0]
     });
   }
 
-isArrayOf(type){
-  return [ typeof this.array[0], this.array[0] instanceof type]
-}
+  isArrayOf(type) {
+    return typeof this.array[0] === type || (type instanceof Object && this.array[0] instanceof type)
+  }
 
-   take(number) {
-     if (arguments.length != 1) {
-       throw 'This function expects only one parameter(number).';
-     } else {
-       this.array.splice(number, this.array.length);
-       return this;
-     }
-   }
+  take(index) {
+    if (arguments.length != 1) {
+      throw 'This function expects only one parameter(index).';
+    } else {
+      this.array.splice(index, this.array.length);
+      return this;
+    }
+  }
 
-   skip(number) {
-     if (arguments.length != 1) {
-       throw 'This function expects only one parameter(number).';
-     } else {
-       this.array.splice(0, number);
-       return this;
-     }
-   }
-   ejectArray() {
-     if (arguments.length != 0) {
-       throw 'This function does not expect any parameter.';
-     } else {
-       return this.array;
-     }
-   }
+  skip(index) {
+    if (arguments.length != 1) {
+      throw 'This function expects only one parameter(index).';
+    } else {
+      this.array.splice(0, index);
+      return this;
+    }
+  }
 
-   first() {
-     if (arguments.length != 0) {
-       throw 'This function does not expect any parameter.';
-     } else {
-       return this.array[0];
-     }
-   }
+  ejectArray() {
+    if (arguments.length != 0) {
+      throw 'This function does not expect any parameter.';
+    } else {
+      return this.array;
+    }
+  }
 
-   last() {
-     if (arguments.length != 0) {
-       throw 'This function does not expect any parameter.';
-     } else {
-       return this.array[this.array.length - 1];
-     }
-   }
+  first() {
+    if (arguments.length != 0) {
+      throw 'This function does not expect any parameter.';
+    } else {
+      return this.array[0];
+    }
+  }
+
+  last() {
+    if (arguments.length != 0) {
+      throw 'This function does not expect any parameter.';
+    } else {
+      return this.array[this.array.length - 1];
+    }
+  }
 }
 
 // Obj Class
@@ -63,57 +64,34 @@ class Obj {
   }
 
   isBoolean() {
-    if (typeof this.obj === 'boolean') {
-      return true
-    } else
-      return false;
-    }
+    return (typeof this.obj === 'boolean')
+  }
 
   isNumber() {
-    if (typeof this.obj === 'number') {
-      return true
-    } else
-      return false;
-    }
+    return (typeof this.obj === 'number')
+  }
 
   isString() {
-    if (typeof this.obj === 'string') {
-      return true
-    } else
-      return false;
-    }
+    return (typeof this.obj === 'string')
+  }
 
   isUndefined() {
-    if (typeof this.obj === 'undefined') {
-      return true
-    } else
-      return false;
-    }
+    return (typeof this.obj === 'undefined')
+  }
 
   isFunction() {
-    if (typeof this.obj === 'function') {
-      return true
-    } else
-      return false;
-    }
+    return (typeof this.obj === 'function')
+  }
 
   isNull() {
-    if (this.obj == null && this.obj !== undefined) {
-      return true
-    } else
-      return false;
-    }
+    return (this.obj == null && this.obj !== undefined)
+  }
 
   isDate() {
-    if (this.obj instanceof Date) {
-      return true
-    } else return false;
+    return (this.obj instanceof Date)
   }
 
   isArray() {
-    if (this.obj instanceof Array) {
-      return true
-    } else
-      return false;
-    }
+    return (this.obj instanceof Array)
   }
+}

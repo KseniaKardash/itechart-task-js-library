@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Library</title>
-  <script src="lib-classes.js"></script>
+  <script src="./lib-classes.js"></script>
 </head>
 
 <body>
 
   <script type="text/javascript">
-    // let arr = new Library([1, 2, 3, 4]);
-    // console.log(arr.take(3).first());
-let a = new Library([1, 2]);
-let b = new Library([3, 4]);
-    // let arr = new Library([1, "DV", 3, 4, 5, 6, 7]);
-    let ab = new Library([a, b]);
-        console.log(ab);
-        console.log(ab.isArrayOf(Library));
-    //
-    // let o = new Obj(23);
-    // console.log(o.isString());
+    const numberValue = new Library([1, 2, 3, 4]);
+    console.log('numberValue.isArrayOf("number")', numberValue.isArrayOf("number"));
+    console.log(numberValue.skip(2).first());
+
+    const dateValue = new Library([new Date, new Date]);
+    console.log('dateValue.isArrayOf(Date)', dateValue.isArrayOf(Date));
+
+    const arrayValue = new Library([[12, 23], [34, 45]]);
+    console.log('arrayValue.isArrayOf(Array)', arrayValue.isArrayOf(Array));
+
+    const dateObj = new Obj(new Date);
+    console.log('dateObj.isDate()', dateObj.isDate());
   </script>
 </body>
 
