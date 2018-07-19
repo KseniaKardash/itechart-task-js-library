@@ -4,7 +4,7 @@
 class Library {
 
   constructor(array) {
-    this.array = array.filter(function(item){
+    this.array = array.filter(function(item) {
       return typeof item === typeof array[0]
     });
   }
@@ -17,8 +17,7 @@ class Library {
     if (arguments.length != 1) {
       throw 'This function expects only one parameter(index).';
     } else {
-      this.array.splice(index, this.array.length);
-      return this;
+      return new Library(this.array.slice(0, index));
     }
   }
 
@@ -26,8 +25,7 @@ class Library {
     if (arguments.length != 1) {
       throw 'This function expects only one parameter(index).';
     } else {
-      this.array.splice(0, index);
-      return this;
+      return new Library(this.array.slice(index, this.array.length));
     }
   }
 

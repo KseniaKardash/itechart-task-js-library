@@ -12,7 +12,8 @@
   <script type="text/javascript">
     const numberValue = new Library([1, 2, 3, 4]);
     console.log('numberValue.isArrayOf("number")', numberValue.isArrayOf("number"));
-    console.log(numberValue.skip(2).first());
+    console.log('numberValue.skip(2).first()', numberValue.skip(2).first());
+    console.log('numberValue.ejectArray()', numberValue.ejectArray());
 
     const dateValue = new Library([new Date, new Date]);
     console.log('dateValue.isArrayOf(Date)', dateValue.isArrayOf(Date));
@@ -22,6 +23,18 @@
 
     const dateObj = new Obj(new Date);
     console.log('dateObj.isDate()', dateObj.isDate());
+
+    const array = [1, 2, 3, 4, 5];
+    const initialArray = new Library(array);
+
+    const newArrayTakenAndEjected = initialArray.take(3).ejectArray();
+    const initialArrayEjected = initialArray.ejectArray();
+    const newArraySkippedAndEjected = initialArray.skip(2).ejectArray();
+
+    console.log('initialArray', initialArray);
+    console.log('initialArrayEjected', initialArrayEjected);
+    console.log('newArrayTakenAndEjected', newArrayTakenAndEjected);
+    console.log('newArraySkippedAndEjected', newArraySkippedAndEjected);
   </script>
 </body>
 
